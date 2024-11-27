@@ -161,8 +161,8 @@ const showRefetch = ref(false)
   <div>
     <header
       ref="headerElement"
-      class="border-b-[0.5px] border-white/10 bg-black px-4"
-      :style="stickyStyles.header"
+      class="border-b-[0.5px] border-white/10 bg-[#F3F3F3]"
+      :style="{ ...stickyStyles.header }"
     >
       <LayoutHeader
         back-url="/"
@@ -170,7 +170,7 @@ const showRefetch = ref(false)
         class="h-16 border-none first:px-0"
         back-avoid-home-button
         :refetch="showRefetch"
-        :title="__('Tickets')"
+        :title="__('Messages')"
       >
         <template #after>
           <CommonTicketCreateLink class="justify-self-end text-base" />
@@ -180,6 +180,7 @@ const showRefetch = ref(false)
         v-if="optionsOverviews.length"
         class="mb-3 flex items-center justify-between gap-2"
         data-test-id="overview"
+        :style="{ padding: '0vh 1vh', margin: '1vh 1vh' }"
       >
         <CommonSelectPill
           :model-value="selectedOverviewLink"
@@ -188,7 +189,8 @@ const showRefetch = ref(false)
           @update:model-value="selectOverview($event as string)"
         >
           <span class="max-w-[55vw] truncate">
-            {{ $t(selectedOverview?.name) }}
+            Inbox
+            <!-- {{ $t(selectedOverview?.name) }} -->
           </span>
           <span class="px-1"> ({{ selectedOverview?.ticketCount }}) </span>
         </CommonSelectPill>

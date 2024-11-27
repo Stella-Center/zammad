@@ -27,7 +27,7 @@ const variantClasses = computed(() => {
       return ['bg-yellow', 'font-semibold', 'text-black-full']
     case 'danger':
       if (props.transparentBackground) return ['text-red-bright']
-      return ['bg-red-dark', 'text-red-bright']
+      return ['bg-white', 'text-red-bright']
     case 'secondary':
     default:
       if (props.transparentBackground) return ['text-white']

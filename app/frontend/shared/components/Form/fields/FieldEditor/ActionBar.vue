@@ -157,6 +157,7 @@ const leftgradientvalue = computed(() => classes.actionBar.leftGradient.left)
       tabindex="0"
       @keydown.tab="hideAfterLeaving"
       @scroll.passive="recalculateOpacity"
+      
     >
       <template v-for="action in actions" :key="action.name">
         <button
@@ -178,7 +179,8 @@ const leftgradientvalue = computed(() => classes.actionBar.leftGradient.left)
             '--color-indicator-background': editor?.getAttributes('textStyle')
               ?.color
               ? editor.getAttributes('textStyle').color
-              : '#ffffff',
+              : 'black',
+              backgroundColor: 'white',
           }"
           :aria-label="action.label || action.name"
           :aria-pressed="isActive?.(action.name, action.attributes)"
@@ -201,7 +203,7 @@ const leftgradientvalue = computed(() => classes.actionBar.leftGradient.left)
         </div>
       </template>
     </div>
-    <template v-if="!props.noGradient">
+    <!-- <template v-if="!props.noGradient">
       <div
         class="ShadowGradient LeftGradient"
         :style="{ opacity: opacityGradientStart }"
@@ -210,7 +212,7 @@ const leftgradientvalue = computed(() => classes.actionBar.leftGradient.left)
         class="ShadowGradient RightGradient"
         :style="{ opacity: opacityGradientEnd }"
       />
-    </template>
+    </template> -->
   </div>
 </template>
 

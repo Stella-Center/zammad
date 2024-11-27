@@ -54,7 +54,7 @@ const showLabel = computed(() => {
 
 <template>
   <div v-if="showLabel" class="mb-2 flex flex-row justify-between">
-    <div class="text-white/80 ltr:pl-3 rtl:pr-3">
+    <div class="text-black/80 ltr:pl-3 rtl:pr-3">
       <slot name="header">{{ i18n.t(headerLabel) }}</slot>
     </div>
     <component
@@ -69,7 +69,7 @@ const showLabel = computed(() => {
   </div>
   <div
     v-if="itemsWithPermission || $slots.default || $slots['before-items']"
-    class="flex w-full flex-col overflow-hidden rounded-xl bg-gray-500 text-base text-white"
+    class="flex w-full flex-col overflow-hidden rounded-xl bg-[#656567] text-base text-white"
     :class="{ 'mb-6': !hasHelp }"
     v-bind="$attrs"
   >

@@ -431,7 +431,6 @@ const classes = getFieldEditorClasses()
     :disabled-plugins="disabledPlugins"
     :form-id="context.formId"
     @hide="showActionBar = false"
-    @blur="focusEditor"
   />
 </template>
 

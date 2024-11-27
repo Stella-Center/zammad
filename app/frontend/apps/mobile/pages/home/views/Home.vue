@@ -8,7 +8,7 @@ import { useSessionStore } from '#shared/stores/session.ts'
 
 import CommonSectionMenu from '#mobile/components/CommonSectionMenu/CommonSectionMenu.vue'
 import type { MenuItem } from '#mobile/components/CommonSectionMenu/index.ts'
-import CommonTicketCreateLink from '#mobile/components/CommonTicketCreateLink/CommonTicketCreateLink.vue'
+// import CommonTicketCreateLink from '#mobile/components/CommonTicketCreateLink/CommonTicketCreateLink.vue'
 import { useTicketOverviews } from '#mobile/entities/ticket/composables/useTicketOverviews.ts'
 
 const IS_DEV = import.meta.env.DEV
@@ -19,23 +19,23 @@ const menu: MenuItem[] = [
   {
     type: 'link',
     link: '/tickets/view',
-    label: __('Ticket Overviews'),
+    label: __('Message Overviews'),
     icon: { name: 'all-tickets', size: 'base' },
     iconBg: 'bg-pink',
     permission: ['ticket.agent', 'ticket.customer'],
   },
   // Cannot inline import.meta here, Vite fails
-  ...(IS_DEV
-    ? [
-        {
-          type: 'link' as const,
-          link: '/playground',
-          label: 'Playground',
-          icon: { name: 'settings', size: 'small' as const },
-          iconBg: 'bg-orange',
-        },
-      ]
-    : []),
+  // ...(IS_DEV
+  //   ? [
+  //       {
+  //         type: 'link' as const,
+  //         link: '/playground',
+  //         label: 'Playground',
+  //         icon: { name: 'settings', size: 'small' as const },
+  //         iconBg: 'bg-orange',
+  //       },
+  //     ]
+  //   : []),
 ]
 
 const overviews = useTicketOverviews()
@@ -56,7 +56,7 @@ const ticketOverview = computed<MenuItem[]>(() => {
 
 <template>
   <div class="p-4">
-    <CommonTicketCreateLink class="mb-3 mt-1.5" />
+    <!-- <CommonTicketCreateLink class="mb-3 mt-1.5" /> -->
     <h1 class="mb-5 flex w-full items-center justify-center text-4xl font-bold">
       {{ $t('Home') }}
     </h1>

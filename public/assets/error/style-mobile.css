@@ -132,6 +132,7 @@ pre.traceback {
 
 .grid {
   display: grid;
+  background-color: #ACBBC1;
 }
 
 .text-base {

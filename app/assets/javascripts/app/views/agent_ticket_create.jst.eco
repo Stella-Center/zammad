@@ -31,7 +31,7 @@
             <div class="ticket-form-top"></div>
             <div class="form-group js-securityOptions hide">
               <div class="formGroup-label">
-                <label for=""><%- @T('Security') %></label>
+                <label><%- @T('Security') %></label>
               </div>
               <div class="horizontal">
                 <div class="btn btn--action btn--split--first js-active-toggle-type js-securityType" data-type="PGP"><%- @T('PGP') %></div>

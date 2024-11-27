@@ -25,7 +25,7 @@ const textClass = computed(() => {
       return 'text-red-bright'
     case EnumTicketStateColorCode.Open:
     default:
-      return 'text-yellow'
+      return 'text-blue'
   }
 })
 
@@ -41,7 +41,7 @@ const backgroundClass = computed(() => {
       return 'bg-red-dark'
     case EnumTicketStateColorCode.Open:
     default:
-      return 'bg-yellow-highlight'
+      return 'bg-blue-highlight'
   }
 })
 </script>
