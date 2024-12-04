@@ -110,7 +110,7 @@ export default {
     <div
       ref="dialog"
       data-common-dialog
-      class="flex h-full grow flex-col overflow-x-hidden bg-black"
+      class="flex h-full grow flex-col overflow-x-hidden bg-white"
       :class="{ 'transition-all duration-200 ease-linear': !isSwiping }"
       :style="{ transform: `translateY(${top})` }"
     >
@@ -151,7 +151,7 @@ export default {
       <div
         ref="content"
         v-bind="$attrs"
-        class="flex grow flex-col items-start overflow-y-auto bg-black text-white"
+        class="flex grow flex-col items-start overflow-y-auto bg-white text-black"
       >
         <slot>{{ content }}</slot>
       </div>

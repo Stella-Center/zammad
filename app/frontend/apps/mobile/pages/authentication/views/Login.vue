@@ -70,9 +70,9 @@ const { forceDesktop } = useForceDesktop()
 const finishLogin = () => {
   const { redirect: redirectUrl } = route.query
   if (typeof redirectUrl === 'string') {
-    router.replace(redirectUrl)
+    router.replace('/tickets/view/my_tickets')
   } else {
-    router.replace('/')
+    router.replace('/tickets/view/my_tickets')
   }
 }
 

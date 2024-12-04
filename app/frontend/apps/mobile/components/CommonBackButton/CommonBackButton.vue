@@ -23,7 +23,7 @@ const props = defineProps<Props>()
 const walker = useWalker()
 
 const isHomeButton = computed(() => {
-  return !(props.avoidHomeButton || walker.getBackUrl(props.fallback) !== '/')
+  return !(props.avoidHomeButton || walker.getBackUrl(props.fallback) !== '/ticket/view/my_tickets')
 })
 
 const locale = useLocaleStore()

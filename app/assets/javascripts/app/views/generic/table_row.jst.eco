@@ -22,7 +22,7 @@
 <% end %>
 <% for header in @headers: %>
   <% value = @P(@object, header.name, @attributes, true) %>
-  <% if @callbacks: %>
+    <% if @callbacks: %>
   <%   for attribute, callbacksAll of @callbacks: %>
   <%     if attribute is header.name: %>
   <%       for callback in callbacksAll: %>
@@ -31,6 +31,7 @@
   <%     end %>
   <%   end %>
   <% end %>
+  <% unless value.includes('new') || value.includes('open'): %>
   <td class="<% if header.parentClass: %><%= header.parentClass %><% end %> <% if header.align: %> align-<%= header.align %><% end %>" <% if header.title: %> title="<%= header.title %>"<% end %>>
     <% if header.name is 'icon': %>
       <%- @Icon('task-state', header.class) %>
@@ -90,5 +91,6 @@
       <% if header.link: %></a><% end %>
     <% end %>
   </td>
+  <% end %> <!-- unless -->
 <% end %>
 </tr>

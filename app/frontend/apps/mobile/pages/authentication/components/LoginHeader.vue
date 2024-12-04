@@ -13,7 +13,8 @@ defineProps<{
     <CommonLogo />
   </div>
   <h1 class="mb-6 flex justify-center p-2 text-2xl font-extrabold">
-    {{ $t(title) }}
+    <!-- {{ $t(title) }} -->
+      Stella Portal
   </h1>
   <template v-if="$c.maintenance_mode">
     <div class="bg-red my-1 flex items-center rounded-xl px-4 py-2 text-white">

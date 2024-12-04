@@ -60,7 +60,7 @@ const loginSchema = defineFormSchema([
     isLayout: true,
     element: 'div',
     attrs: {
-      class: 'mt-2.5 flex grow items-center justify-between text-white',
+      class: 'mt-2.5 flex grow items-center justify-between text-black',
     },
     children: [
       {
@@ -76,7 +76,7 @@ const loginSchema = defineFormSchema([
               isLayout: true,
               component: 'CommonLink',
               props: {
-                class: 'text-right text-white',
+                class: 'text-right text-[#2D6AB5]',
                 link: '/#password_reset',
                 onClick: forceDesktop,
               },
@@ -140,7 +140,7 @@ const sendCredentials = (formData: FormSubmitData<LoginCredentials>) => {
         <span class="ltr:mr-1 rtl:ml-1">{{ $t('New user?') }}</span>
         <CommonLink
           link="/#signup"
-          class="!text-yellow cursor-pointer select-none underline"
+          class="!text-[#2D6AB5] cursor-pointer select-none underline"
           @click="forceDesktop"
         >
           {{ $t('Register') }}

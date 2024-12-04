@@ -24,9 +24,7 @@
 
 <div class="attributeBar-reset buttonDropdown btn js-reset <% if !@resetButtonShown: %>hide<% end %>"><span><%- @T('Discard your unsaved changes.') %></span></div>
 <div class="buttonDropdown dropdown dropdown--actions dropup<% if !@ticket.editable(): %> hide<% end %>">
-  <div class="btn btn--text btn--icon--last" data-toggle="dropdown">
-    <span class="js-secondaryActionButtonLabel"></span> <%- @Icon('arrow-up') %>
-  </div>
+
   <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="secondaryAction">
     <li class="js-secondaryAction" role="menuitem">
       <span class="js-secondaryActionLabel" data-type="closeTab"><%- @T('Close tab') %></span>
@@ -54,7 +52,7 @@
 </div>
 <form class="buttonDropdown<% if !@ticket.editable(): %> hide<% end %>">
 <% if @macroDisabled && @sharedDraftsDisabled: %>
-  <button class="btn btn--primary js-submit"><span><%- @T('Update') %></span></button>
+  <button class="btn btn--primary js-submit" style="padding: 14px 28px; background-color: #2D6AB5; color: #fff; border: none; border-radius: 64px;"><span><%- @T('Send') %></span></button>
 <% else: %>
   <div class="buttonDropdown dropdown dropup js-submitDropdown">
     <button class="btn btn--primary btn--split--first js-submit"><span><%- @T('Update') %></span></button>

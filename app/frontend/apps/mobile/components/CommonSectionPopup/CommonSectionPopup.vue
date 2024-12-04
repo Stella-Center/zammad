@@ -141,8 +141,8 @@ const getClassesByType = (type: PopupItemDescriptor['type']) => {
         @keydown.esc="hidePopup()"
       >
         <div ref="wrapper" class="wrapper" role="alert" :aria-label="heading">
-          <div v-bind="$attrs" class="flex w-full flex-col rounded-xl bg-black">
-            <h1 v-if="heading" class="w-full pt-3 text-center text-lg">
+          <div v-bind="$attrs" class="flex w-full flex-col rounded-xl bg-white">
+            <h1 v-if="heading" class="w-full pt-3 text-center text-lg text-black">
               {{ heading }}
             </h1>
             <slot name="header" />
@@ -162,7 +162,7 @@ const getClassesByType = (type: PopupItemDescriptor['type']) => {
             </component>
           </div>
           <CommonButton
-            class="mt-3 flex h-14 w-full items-center justify-center !bg-black"
+            class="mt-3 flex h-14 w-full items-center justify-center !bg-white !text-black"
             @click="hidePopup()"
           >
             {{ $t(cancelLabel) }}

@@ -158,7 +158,7 @@ const showRefetch = ref(false)
 </script>
 
 <template>
-  <div>
+  <div style="background-color: #F3F3F3;">
     <header
       ref="headerElement"
       class="border-b-[0.5px] border-white/10 bg-[#F3F3F3]"

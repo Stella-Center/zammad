@@ -41,16 +41,17 @@
         <% end %>
       </ul>
     </li>
-  <% else: %>
-    <li class="settings<%= if item.class then ' '+ item.class %>">
-      <a class="list-button fit horizontal centered" href="<%= item.target %>" title="<%- @Ti(item.name) %>">
-        <p>+</p> <p>New Message</p>
-      </a>
-    </li>
-    <li class="settings">
-      <a class="back-to-portal" href="https://stellacenter.com/" title="Back to Portal">
-        <p>Back to Portal</p>
-      </a>
-    </li>
   <% end %>
 <% end %>
+
+<!-- Add New Message and Back to Portal buttons outside the loop -->
+<li class="settings">
+  <a class="list-button fit horizontal centered" href="#customer_ticket_new" title="New Message">
+    <p>+</p> <p>New Message</p>
+  </a>
+</li>
+<li class="settings">
+  <a class="back-to-portal" href="https://stellacenter.com/" title="Back to Portal">
+    <p>Back to Portal</p>
+  </a>
+</li>

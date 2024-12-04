@@ -55,7 +55,7 @@ const showLabel = computed(() => {
 <template>
   <div v-if="showLabel" class="mb-2 flex flex-row justify-between">
     <div class="text-black/80 ltr:pl-3 rtl:pr-3">
-      <slot name="header">{{ i18n.t(headerLabel) }}</slot>
+      <slot name="header">Message Overview</slot>
     </div>
     <component
       :is="actionLink ? 'CommonLink' : 'div'"

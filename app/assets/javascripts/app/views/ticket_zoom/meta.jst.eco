@@ -1,6 +1,7 @@
 <small class="task-subline">
   <span class="ticket-number-copy">
-    <%- @C('ticket_hook') %><span class="ticket-number js-objectNumber" data-number="<%- @C('ticket_hook') %><%= @ticket.number %>"><%= @ticket.number %></span>
+    
+    Message #<span class="ticket-number js-objectNumber" data-number="<%- @C('ticket_hook') %><%= @ticket.number %>"><%= @ticket.number %></span>
     <%- @Icon('clipboard', 'ticketNumberCopy-icon u-clickable') %>
   </span>
   - <%- @T('created') %> <%- @humanTime(@ticket.created_at) %>

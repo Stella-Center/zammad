@@ -32,7 +32,7 @@ const notificationCount = computed(() => {
       class="flex h-14 w-full items-center text-center "
     >
       <CommonLink
-        link="/"
+        link="/mobile/tickets/view/my_tickets"
         class="flex flex-1 justify-center"
         exact-active-class="text-blue"
       >
@@ -55,7 +55,7 @@ const notificationCount = computed(() => {
       </CommonLink>
       <CommonLink
         link="/account"
-        class="group flex-1"
+        class="group flex-1 pointer-events-none"
         exact-active-class="user-active"
       >
         <CommonUserAvatar

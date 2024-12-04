@@ -257,9 +257,9 @@ body {
   font-weight: normal;
   font-variant-ligatures: none;
   line-height: 1.45;
-  background: var(--background-primary);
+  background: #F3F3F3;
   height: 100%;
-  color: var(--text-normal);
+  color: black;
   word-wrap: break-word;
   overflow-wrap: break-word;
   display: flex;
@@ -1525,7 +1525,7 @@ table {
   }
 
   >thead>tr>th {
-    background: var(--background-modifier-accent);
+    background: #D9D9D9;
   }
 }
 
@@ -1538,8 +1538,8 @@ table {
   padding: 12px 9px 10px;
   border-bottom: none;
   border-top: 1px solid #ececec;
-  background: var(--background-primary-alt);
-  color: var(--text-normal);
+  background: #D9D9D9;
+  color: black;
   font-weight: normal;
   font-size: 12px;
   text-transform: uppercase;
@@ -1602,7 +1602,7 @@ td.align-right {
 
 .table-hover>tbody>tr:hover,
 .table-hover>tbody>tr.is-hover {
-  background: var(--background-secondary);
+  background: #D9D9D9;
 }
 
 .table-hover-in-modal>tbody>tr:hover>td {
@@ -2430,8 +2430,11 @@ textarea,
   font-weight: normal;
   line-height: 25px;
   color: var(--text-normal);
-  background: var(--background-secondary);
-  border: 1px solid var(--border);
+  // background: var(--background-secondary);
+  background: #F3F3F3!important;
+  // 
+  // border: 1px solid var(--border);
+  border: 1px solid #D9D9D9;
   border-radius: 3px;
   transition: none;
   box-shadow: none;
@@ -2448,7 +2451,8 @@ textarea,
   .hero-unit &,
   .form-field-group &,
   .popover & {
-    background: var(--background-primary);
+    background: white;
+    color: black;
   }
 
   .modal-body .form-field-group &,
@@ -2918,7 +2922,8 @@ input.has-error {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   position: relative;
-  background-color: var(--background-primary);
+  background-color: #F3F3F3!important;
+  color: black;
 
   @include phone {
     @include bidi-style(margin-left, $mobileNavigationWidth, margin-right, 0);
@@ -2946,6 +2951,10 @@ input.has-error {
   align-items: center;
   justify-content: center;
   flex: 1;
+
+  h2 {
+    color: black;
+  }
 
   .icon {
     @include bidi-style(margin-right, 14px, margin-left, 0);
@@ -3416,9 +3425,10 @@ kbd {
   width: 500px;
   margin: 10px 0;
   padding: 23px 25px;
-  border: 1px solid var(--border);
-  color: var(--text-normal);
-  background-color: var(--background-secondary);
+  // border: 1px solid var(--border);
+  border: none;
+  color: black;
+  background: white;
   border-radius: 6px;
   box-shadow: var(--fullscreen-drop-shadow);
 
@@ -3444,7 +3454,7 @@ kbd {
 .darkBackground,
 .login {
   padding: 10px;
-  background: var(--fullscreen-background);
+  background: #F3F3F3;
 }
 
 .content.getstarted {
@@ -3460,10 +3470,10 @@ kbd {
 .request_admin_password_auth,
 .signup {
   padding: 24px;
-  color: var(--fullscreen-text);
+  color: black;
 
   a {
-    color: var(--fullscreen-text-link);
+    color: black;
 
     &.text-muted {
       color: inherit;
@@ -3615,12 +3625,12 @@ ol.tabs li {
   flex-flow: wrap;
   padding: 0;
   margin-bottom: 20px;
-  color: var(--interactive-muted);
-  border: 1px solid var(--border);
+  color: black;
+  // border: 1px solid var(--border);
   border-right: 0;
   border-bottom: 0;
   border-radius: 3px;
-  background: var(--background-secondary);
+  background: #D9D9D9;
 
   @include phone {
     overflow: auto;
@@ -3656,8 +3666,8 @@ ol.tabs li {
   }
 
   &.active {
-    color: var(--text-inverted);
-    background: var(--button-active);
+    color: #2D6AB5;
+    background: white;
     box-shadow: none;
     flex-shrink: 0;
   }
@@ -3715,8 +3725,8 @@ ol.tabs li {
 }
 
 .tab:nth-child(n) {
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-right: none;
+  border-bottom: none;
 }
 
 .tabs.tabs--inline {
@@ -4550,12 +4560,12 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background: var(--background-primary);
+  background: #F3F3F3;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  color: var(--text-normal);
+  color: black;
 
   .icon {
     @include bidi-style(margin-right, 10px, margin-left, 0);
@@ -4641,6 +4651,7 @@ footer {
   text-decoration: none;
   display: flex;
   align-items: center;
+  background-color: #ACBBC1;
 
   @extend %clickable;
 
@@ -4658,7 +4669,7 @@ footer {
   }
 
   &:hover {
-    background: var(--menu-background-primary-hover);
+    background-color: #a1afb4;
     border-bottom-color: hsla(230, 4%, 84%, 0.1);
   }
 
@@ -5167,7 +5178,7 @@ th[data-column-key="state_id"] {
   width: 100%;
   padding: 5px 33px;
   height: 30px;
-  color: var(--menu-text);
+  color: black;
   background: #D9D9D9;
   line-height: 20px;
   outline: none;
@@ -5320,7 +5331,7 @@ input[type='search']::-webkit-search-decoration {
 .global-search-menu {
   @extend .zIndex-7;
 
-  background: var(--menu-background-primary);
+  background: white;
   position: absolute;
   left: 0;
   right: 0;
@@ -6063,7 +6074,7 @@ a.list-group-item.active>.badge,
   max-width: 9999px;
   border-radius: 0;
   margin: 0 5px;
-  background: var(--background-popover);
+  background: white;
   border: none;
   box-shadow: var(--elevation-high);
 
@@ -6074,7 +6085,7 @@ a.list-group-item.active>.badge,
   }
 
   >.arrow::after {
-    border-color: var(--background-popover);
+    border-color: white;
   }
 }
 
@@ -6093,6 +6104,7 @@ a.list-group-item.active>.badge,
   border: none;
   background: none;
   padding: 21px 17px 4px;
+  color: black;
 
   .is-inactive {
     text-decoration: line-through;
@@ -6116,6 +6128,7 @@ a.list-group-item.active>.badge,
 .popover-content {
   padding: 0 17px;
   margin-bottom: 21px;
+  color: black;
 
   .popover--has-horizontal-form & {
     padding: 10px 5px 15px 15px;
@@ -6300,7 +6313,7 @@ a.list-group-item.active>.badge,
 
   .popover-title {
     @extend h1;
-
+    color: black;
     padding: 0;
     line-height: 1;
   }
@@ -6972,7 +6985,7 @@ a.list-group-item.active>.badge,
 }
 
 .ticketZoom {
-  background: var(--background-primary);
+  background: #F3F3F3;
 }
 
 .ticketZoom-controls {
@@ -7069,6 +7082,7 @@ a.list-group-item.active>.badge,
   margin-bottom: 8px;
   padding: 0 7px;
   text-align: center;
+  color: black;
 
   .ticketZoom-header & {
 
@@ -7147,7 +7161,7 @@ a.list-group-item.active>.badge,
 }
 
 .article-content {
-  color: var(--text-normal);
+  color: black;
   position: relative;
   z-index: 1;
   padding: 0 55px;
@@ -7191,8 +7205,8 @@ a.list-group-item.active>.badge,
 }
 
 .article-meta {
-  background: var(--background-tertiary);
-  color: var(--text-inverted);
+  background: rgb(255, 255, 255);
+  color: black;
   padding: 21px 25px 11px;
   margin: 0 12px;
 
@@ -7338,9 +7352,9 @@ a.list-group-item.active>.badge,
 
 .textBubble {
   padding: 10px 20px;
-  background: var(--background-secondary);
-  border-radius: 2px;
-  border: 1px solid var(--border-alt);
+  background: white;
+  border-radius: 10px;
+  border: none;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.06) inset;
   position: relative;
 
@@ -7430,8 +7444,9 @@ a.list-group-item.active>.badge,
 }
 
 .customer.ticket-article-item .textBubble {
-  background: var(--background-article-customer);
-  border-color: var(--border-article-customer);
+  background: white;
+  border-color: white;
+  padding: 20px;
   box-shadow: none;
 }
 
@@ -7466,8 +7481,8 @@ a.list-group-item.active>.badge,
   left: 1px;
   width: 11px;
   height: 11px;
-  background: var(--background-secondary);
-  border: 1px solid var(--border-alt);
+  background: white;
+  border: none;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.06) inset;
   transform: rotate(-45deg);
 
@@ -7489,10 +7504,10 @@ a.list-group-item.active>.badge,
 }
 
 .customer.ticket-article-item .bubble-arrow::after {
-  background: var(--background-article-customer);
+  background: white;
   left: auto;
   right: 2px;
-  border-color: var(--border-article-customer);
+  border-color: none;
   box-shadow: none;
 
   @include phone {
@@ -7989,7 +8004,7 @@ a.list-group-item.active>.badge,
 }
 
 .attachment:hover {
-  background: var(--background-secondary-hover);
+  background: #F3F3F3;
 }
 
 .attachment--row .attachment-name {
@@ -8601,10 +8616,10 @@ li.list-item-none {
 }
 
 .attributeBar {
-  background: var(--background-secondary);
+  background: white;
   transition: margin 250ms;
   flex-shrink: 0;
-  border-top: 1px solid var(--border);
+  // border-top: 1px solid var(--border);
 
   &.is-closed {
     margin-bottom: -60px;
@@ -8670,7 +8685,7 @@ li.list-item-none {
 }
 
 .newTicket .form-control {
-  border-color: var(--border);
+  border-color: none;
 
   &:focus,
   &.focus {
@@ -8717,9 +8732,10 @@ li.list-item-none {
 }
 
 .box {
-  background: var(--background-secondary);
+  background: white;
   margin: 20px 0;
-  border: 1px solid var(--border);
+  border: none;
+  color: black;
   padding: 20px 24px;
 }
 
@@ -8763,7 +8779,7 @@ li.list-item-none {
 .box h1 {
   margin-top: 10px;
   margin-bottom: 12px;
-  color: var(--text-normal);
+  color: black;
   flex: 1;
 }
 
@@ -8842,6 +8858,7 @@ li.list-item-none {
   background: var(--background-primary-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  display: none;
 }
 
 .type-tabs {
@@ -8988,7 +9005,7 @@ li.list-item-none {
 }
 
 .ui-menu {
-  background: var(--background-tertiary);
+  background: #ACBBC1;
   border: none;
   color: var(--text-inverted);
   font-family: inherit;
@@ -10137,8 +10154,9 @@ li.dropdown-header {
 
   display: flex;
   align-items: center;
-  background: var(--background-secondary);
-  border-bottom: 1px solid var(--border);
+  background: white;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
   height: 64px;
   top: 0;
   left: 0;

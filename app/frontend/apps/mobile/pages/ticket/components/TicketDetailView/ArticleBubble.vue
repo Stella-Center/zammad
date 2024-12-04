@@ -60,7 +60,7 @@ const colorClasses = computed(() => {
 
   if (internal) return 'border border-blue bg-black'
   if (position === 'left') return 'border border-black bg-white text-black'
-  return 'border border-black bg-blue text-black'
+  return 'border border-black bg-[#FFFFFF] text-black'
 })
 
 const bubbleClasses = computed(() => {
@@ -187,7 +187,7 @@ const onContextClick = () => {
     </div>
     <div class="Border">
       <div
-        class="content flex flex-col overflow-hidden rounded-3xl px-4 pb-3 pt-2"
+        class="content flex flex-col overflow-hidden rounded-2xl px-4 pb-3 pt-2"
         :class="[bubbleClasses, colorClasses]"
       >
         <div
