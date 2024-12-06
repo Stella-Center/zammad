@@ -24,7 +24,11 @@
   <a class="menu-item js-<%- item.class %>MenuItem <% if @activeTab[item.target]: %>is-active<% end %> <% if item.onclick: %>js-onclick<% end %>" href="<%= item.target %>" data-key="<%- item.key %>">
     <%- @Icon(item.class, 'menu-item-icon') %>
     <span class="menu-item-name">
-      Messages
+      <% if item.name == "Overviews": %>
+        <%- @T("Messages") %>
+      <% else: %>
+        <%- @T(item.name) %>
+      <% end %>
     </span>
     <% if item.counter isnt undefined && item.counter isnt 0: %>
       <span class="counter badge badge--big"><%= item.counter %></span>
