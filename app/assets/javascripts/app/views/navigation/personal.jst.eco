@@ -1,55 +1,58 @@
 <% for item in @items: %>
   <% if !_.isEmpty(item.child): %>
-    <li class="<% if item.class: %><%- item.class %><% end %> dropup <% if @openTab[item.target] : %>open<% end %>">
-      <a class="list-button dropdown-toggle js-action" data-toggle="dropdown" href="<%= item.target %>" title="<% if item.translate: %><%- @Ti(item.name) %><% else: %><%= item.name %><% end %>" style="display: none;">
+    <li class="<% if item.class: %><%- item.class %><% end %> dropup <% if @openTab[item.target]: %>open<% end %>">
+      <a class="list-button dropdown-toggle js-action" data-toggle="dropdown" href="<%= item.target %>" title="<% if item.translate: %><%- @Ti(item.name) %><% else: %><%= item.name %><% end %>">
         <span class="dropdown-nose"></span>
-        <% if item.class is 'user': %>
+        <% if item.class == 'user': %>
           <span class="js-avatar"></span>
         <% else: %>
           <%- @Icon(item.icon, 'user-menu-icon') %>
         <% end %>
       </a>
       <ul class="dropdown-menu dropdown-menu--light" role="menu">
-        <% for item, id in item.child: %>
-          <% if item.divider and id > 0: %>
+        <% for child_item, id in item.child: %>
+          <% if child_item.divider and id > 0: %>
             <li class="divider"></li>
           <% end %>
-          <% if item.navheader: %>
-            <li class="dropdown-header"><%- @T(item.navheader) %></li>
+          <% if child_item.navheader: %>
+            <li class="dropdown-header"><%- @T(child_item.navheader) %></li>
           <% end %>
-          <li<% if item.toggle: %> class="dropdown-menu-item dropdown-menu-item--toggle"<% end %>>
-            <% if item.target: %>
-            <a href="<%= item.target %>" data-key="<%- item.key %>" class="horizontal center <% if item.onclick: %>js-onclick<% end %>">
+          <li<% if child_item.toggle: %> class="dropdown-menu-item dropdown-menu-item--toggle"<% end %>>
+            <% if child_item.target == "#customer_ticket_new": %>
+              <!-- Don't display New Message button if the target is #customer_ticket_new -->
             <% else: %>
-            <div class="horizontal center">
+              <a href="<%= child_item.target %>" data-key="<%- child_item.key %>" class="horizontal center <% if child_item.onclick: %>js-onclick<% end %>">
             <% end %>
-              <span class="flex u-textTruncate"><% if item.translate: %><%- @T(item.name) %><% else: %><%= item.name %><% end %></span>
-              <% if item['count'] isnt undefined: %><span class="badge badge--text count"><%= item['count'] %></span><% end %>
-              <% if item.iconClass: %><%- @Icon(item.iconClass) %><% end %>
-              <% if item.toggle: %>
+              <span class="flex u-textTruncate"><% if child_item.translate: %><%- @T(child_item.name) %><% else: %><%= child_item.name %><% end %></span>
+              <% if child_item['count'] != undefined: %><span class="badge badge--text count"><%= child_item['count'] %></span><% end %>
+              <% if child_item.iconClass: %><%- @Icon(child_item.iconClass) %><% end %>
+              <% if child_item.toggle: %>
                 <span class="zammad-switch zammad-switch--tiny">
-                   <input type="checkbox" id="<%- item.toggle %>-switch" <% if item.checked && item.checked(): %>checked<% end %>>
-                   <label for="<%- item.toggle %>-switch"></label>
+                   <input type="checkbox" id="<%- child_item.toggle %>-switch" <% if child_item.checked and child_item.checked(): %>checked<% end %>>
+                   <label for="<%- child_item.toggle %>-switch"></label>
                 </span>
               <% end %>
-            <% if item.target: %>
             </a>
-            <% else: %>
-            </div>
-            <% end %>
           </li>
         <% end %>
       </ul>
     </li>
+  <% else: %>
+    <% if item.name == "New": %>
+      <% item.name = "New Message" %>
+    <% end %>
+    <li class="settings <% if item.class: %><%- item.class %><% end %>">
+      <a class="list-button" href="<%= item.target %>" title="<% if item.translate: %><%- @Ti(item.name) %><% else: %><%= item.name %><% end %>" style="color: #ffffff;">
+        <% if item.icon: %>
+          <%- @Icon(item.icon, 'user-menu-icon') %>
+        <% end %>
+        <span><% if item.translate: %><%- @T(item.name) %><% else: %><%= item.name %><% end %></span>
+      </a>
+    </li>
   <% end %>
 <% end %>
 
-<!-- Add New Message and Back to Portal buttons outside the loop -->
-<li class="settings">
-  <a class="list-button fit horizontal centered" href="#customer_ticket_new" title="New Message">
-    <p>+</p> <p>New Message</p>
-  </a>
-</li>
+<!-- Back to Portal button -->
 <li class="settings">
   <a class="back-to-portal" href="https://stellacenter.com/" title="Back to Portal">
     <p>Back to Portal</p>

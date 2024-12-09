@@ -6,4 +6,14 @@
   <div class="tab-content first-steps-widgets hidden"></div>
   <div class="tab-content stat-widgets three-columns horizontal"></div>
 </div>
-
+<div class="sidebar optional">
+  <h2><%- @T('Activity Stream') %></h2>
+  <div class="activity-description">
+    <p><%- @T('Here you will find the latest activities of your system.') %></p>
+    <p><%- @T('For example, recently changed tickets, users, or organizations.') %></p>
+  </div>
+  <div class="activity-entries js-activityContent">
+    <p><%- @T('Here you will find the latest activities of your system.') %></p>
+    <p><%- @T('For example, recently changed tickets, users, or organizations.') %></p>
+  </div>
+</div>

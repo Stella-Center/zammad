@@ -5909,6 +5909,12 @@ li.add .dropdown-nose {
   }
 }
 
+.true {
+  .dropup {
+    display: none;
+  }
+}
+
 .NavBarAdmin.sidebar,
 .NavBarProfile.sidebar {
   width: $sidebarWidth;
