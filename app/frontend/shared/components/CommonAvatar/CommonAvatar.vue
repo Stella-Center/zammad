@@ -59,6 +59,7 @@ const classMap = getAvatarClasses()
     :aria-label="avatarLabel"
     :aria-hidden="decorative ? 'true' : undefined"
     data-test-id="common-avatar"
+    style="background: linear-gradient(to right, #2D6AB5, #ACBBC1); color: white;"
   >
     <CommonIcon
       v-if="vipIcon"

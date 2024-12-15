@@ -1551,7 +1551,7 @@ table {
 
 .table-column-head {
   display: flex;
-  
+
   @extend %clickable;
 
   &-unclickable {
@@ -2431,7 +2431,7 @@ textarea,
   line-height: 25px;
   color: var(--text-normal);
   // background: var(--background-secondary);
-  background: #F3F3F3!important;
+  background: #F3F3F3 !important;
   // 
   // border: 1px solid var(--border);
   border: 1px solid #D9D9D9;
@@ -2922,7 +2922,7 @@ input.has-error {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   position: relative;
-  background-color: #F3F3F3!important;
+  background-color: #F3F3F3 !important;
   color: black;
 
   @include phone {
@@ -5120,7 +5120,7 @@ th[data-column-key="state_id"] {
   @include rtl(padding, 11px 10px 4px 0);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background-color: white !important;
+  background-color: white;
   flex-shrink: 0;
   display: flex;
   align-items: flex-start;
@@ -5443,7 +5443,7 @@ input[type='search']::-webkit-search-decoration {
 
   p {
     color: white;
-    margin: 0!important;
+    margin: 0 !important;
   }
 
   @include phone {
@@ -5492,6 +5492,10 @@ input[type='search']::-webkit-search-decoration {
   width: 20px;
   height: 20px;
   fill: var(--menu-icon-secondary);
+}
+
+.user-menu-icon-white {
+  fill: white !important;
 }
 
 .user-menu-icon.icon-plus {
@@ -6276,6 +6280,7 @@ a.list-group-item.active>.badge,
 
   &.is-empty .popover-notificationsHeader {
     box-shadow: none;
+    display: none;
   }
 
   .arrow {
@@ -6310,6 +6315,7 @@ a.list-group-item.active>.badge,
 
   .activity-placeholder {
     margin-bottom: 21px;
+    display: none;
   }
 }
 

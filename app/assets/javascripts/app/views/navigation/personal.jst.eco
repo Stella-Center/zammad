@@ -44,7 +44,7 @@
     <li class="settings <% if item.class: %><%- item.class %><% end %>">
       <a class="list-button" href="<%= item.target %>" title="<% if item.translate: %><%- @Ti(item.name) %><% else: %><%= item.name %><% end %>" style="color: #ffffff;">
         <% if item.icon: %>
-          <%- @Icon(item.icon, 'user-menu-icon') %>
+          <%- @Icon(item.icon, 'user-menu-icon user-menu-icon-white') %>
         <% end %>
         <span><% if item.translate: %><%- @T(item.name) %><% else: %><%= item.name %><% end %></span>
       </a>

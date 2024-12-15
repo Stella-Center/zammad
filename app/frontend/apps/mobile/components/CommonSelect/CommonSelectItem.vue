@@ -83,7 +83,7 @@ const label = computed(() => {
     />
     <span
       :class="{
-        'font-semibold !text-black': selected,
+        'font-semibold !text-white': selected,
         'opacity-30': option.disabled,
       }"
       class="grow text-black/80"

@@ -85,19 +85,19 @@ const scrollDown = () => {
               <!-- <CommonIcon name="chat" size="small" decorative /> -->
             </div>
             <span class="line-clamp-1 break-all">
-              {{ newArticlePresent ? $t('Edit reply') : $t('Add reply') }}
+              {{ newArticlePresent ? $t('Edit draft') : $t('Add reply') }}
             </span>
           </FormKit>
           <FormKit
             v-if="canSave"
             variant="submit"
-            input-class="font-semibold text-base px-4 py-1 !text-black formkit-variant-primary:bg-yellow rounded select-none"
+            input-class="font-semibold text-base px-6 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-full select-none"
             wrapper-class="flex justify-center items-center"
             type="button"
             form="form-ticket-edit"
             @click.prevent="emit('save')"
           >
-            {{ $t('Save') }}
+            {{ $t('Send') }}
           </FormKit>
           <button v-if="formInvalid" @click="emit('save')">
             <span

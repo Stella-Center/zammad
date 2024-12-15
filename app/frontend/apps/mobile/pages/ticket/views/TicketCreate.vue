@@ -133,7 +133,7 @@ const ticketTitleSection = getFormSchemaGroupSection(
       screen: 'create_top',
       outerClass:
         '$reset formkit-outer w-full grow justify-center flex items-center flex-col ',
-      wrapperClass: '$reset formkit-disabled:opacity-30 flex w-full ',
+      wrapperClass: '$reset formkit-disabled:opacity-30 flex w-full',
       labelClass: '$reset sr-only',
       blockClass: '$reset flex w-full',
       innerClass: '$reset flex justify-center items-center px-8 w-full',
@@ -163,7 +163,7 @@ const ticketArticleTypeSection = getFormSchemaGroupSection(
       isLayout: true,
       element: 'p',
       attrs: {
-        class: 'my-10 text-base text-center text-yellow ',
+        class: 'my-10 text-base text-center',
       },
       children: '$getAdditionalCreateNote($values.articleSenderType)',
     },
@@ -278,6 +278,9 @@ const ticketArticleMessageSection = getFormSchemaGroupSection(
     {
       isLayout: true,
       component: 'FormGroup',
+      props: {
+        class: 'bg-white rounded-[10px] border border-[#D9D9D9] pt-[10px]', 
+      },
       children: [
         {
           if: '$securityIntegration === true && $values.articleSenderType === "email-out"',
@@ -286,7 +289,7 @@ const ticketArticleMessageSection = getFormSchemaGroupSection(
           type: 'security',
         },
         {
-          name: 'body',
+          name: 'body',          
           screen: 'create_top',
           object: EnumObjectManagerObjects.TicketArticle,
           props: {
