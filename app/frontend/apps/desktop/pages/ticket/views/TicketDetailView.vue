@@ -428,7 +428,7 @@ const submitEditTicket = async (
         notify({
           id: 'ticket-update',
           type: NotificationTypes.Success,
-          message: __('Ticket updated successfully.'),
+          message: __('Message sent.'),
         })
 
         const screenBehaviour = activeMacro.value

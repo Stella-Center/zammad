@@ -151,7 +151,7 @@ export default {
       <div
         ref="content"
         v-bind="$attrs"
-        class="flex grow flex-col items-start overflow-y-auto bg-white text-black"
+        class="flex grow flex-col items-start overflow-y-auto bg-[#D9D9D9] text-black"
       >
         <slot>{{ content }}</slot>
       </div>

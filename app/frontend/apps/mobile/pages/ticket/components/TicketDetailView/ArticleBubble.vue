@@ -238,7 +238,7 @@ const onContextClick = () => {
             @preview="previewImage($event, attachment)"
           />
         </div>
-        <div
+        <!-- <div
           class="absolute bottom-0 flex gap-1"
           :class="[
             position === 'left'
@@ -297,7 +297,7 @@ const onContextClick = () => {
               data-ignore-click
             />
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

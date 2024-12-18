@@ -378,7 +378,7 @@ describe('Ticket detail view screen behavior', () => {
     await view.events.click(view.getByRole('button', { name: 'Update' }))
 
     expect(
-      await view.findByText('Ticket updated successfully.'),
+      await view.findByText('Message sent.'),
     ).toBeInTheDocument()
 
     const router = getTestRouter()

@@ -44,6 +44,12 @@ const backgroundClass = computed(() => {
       return 'bg-none-highlight'
   }
 })
+
+const iconName = computed(() => {
+  return props.colorCode === EnumTicketStateColorCode.Closed
+    ? 'common-alert-success'
+    : 'ticket-state-circle'
+})
 </script>
 
 <template>
@@ -51,9 +57,6 @@ const backgroundClass = computed(() => {
     :class="[
       textClass,
       backgroundClass,
-      // {
-      //   'rounded py-1 ltr:pl-1 ltr:pr-1.5 rtl:pl-1.5 rtl:pr-1': pill,
-      // },
     ]"
     class="flex select-none items-center"
     role="group"
@@ -61,7 +64,7 @@ const backgroundClass = computed(() => {
     <CommonIcon
       :size="pill ? 'tiny' : 'base'"
       :label="$t('(state: %s)', $t(label))"
-      name="ticket-state-circle"
+      :name="iconName"
     />
     <div
       v-if="pill"

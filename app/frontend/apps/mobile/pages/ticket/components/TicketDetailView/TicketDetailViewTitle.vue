@@ -79,7 +79,7 @@ const customer = computed(() => {
           <h1 class="line-clamp-3 break-words text-xl font-bold leading-7">
             {{ ticket.title }}
           </h1>
-          <div class="mt-2 flex flex-wrap gap-2">
+          <!-- <div class="mt-2 flex flex-wrap gap-2">
             <CommonTicketEscalationIndicator
               v-if="isTicketAgent && ticket.escalationAt"
               :escalation-at="ticket.escalationAt"
@@ -93,7 +93,7 @@ const customer = computed(() => {
               v-if="isTicketAgent"
               :priority="ticket.priority"
             />
-          </div>
+          </div> -->
         </div>
         <!-- <CommonIcon
           :name="`chevron-${locale.localeData?.dir === 'rtl' ? 'left' : 'right'}`"

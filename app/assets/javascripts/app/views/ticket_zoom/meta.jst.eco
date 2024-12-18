@@ -4,7 +4,7 @@
     Message #<span class="ticket-number js-objectNumber" data-number="<%- @C('ticket_hook') %><%= @ticket.number %>"><%= @ticket.number %></span>
     <%- @Icon('clipboard', 'ticketNumberCopy-icon u-clickable') %>
   </span>
-  - <%- @T('created') %> <%- @humanTime(@ticket.created_at) %>
+  - <%- @T('created') %> <%- new Date(@ticket.created_at).toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %>
 
   <% if !@isCustomer: %>
     <% if @ticket.escalation_at: %> - <span class="escalation-popover" data-id="<%= @ticket.id %>"><%- @T('escalation') %> <%- @humanTime(@ticket.escalation_at, true, '', false) %><% end %></span>

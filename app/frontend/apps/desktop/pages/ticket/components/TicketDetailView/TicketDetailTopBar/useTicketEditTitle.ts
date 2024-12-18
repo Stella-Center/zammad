@@ -24,7 +24,7 @@ export const useTicketEditTitle = (ticketId: ComputedRef<string>) => {
         notify({
           type: NotificationTypes.Success,
           id: 'ticket-updated-successfully',
-          message: __('Ticket updated successfully.'),
+          message: __('Message sent.'),
         })
       })
   }

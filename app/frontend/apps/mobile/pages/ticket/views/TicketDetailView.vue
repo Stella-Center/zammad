@@ -171,7 +171,7 @@ const saveTicketForm = async (
       notify({
         id: 'ticket-update',
         type: NotificationTypes.Success,
-        message: __('Ticket updated successfully.'),
+        message: __('Message sent.'),
       })
 
       // Reset article form after ticket update and reset form.
