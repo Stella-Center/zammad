@@ -22,16 +22,17 @@ const notificationCount = computed(() => {
 
 <template>
   <footer
-    class="bottom-navigation bg-gray-light fixed bottom-0 z-10 w-full backdrop-blur-lg"
+  class="bottom-navigation bg-[#D9D9D9] fixed bottom-0 z-10 w-full backdrop-blur-lg"
+
     :class="{ 'px-4': isCustomLayout }"
     data-bottom-navigation
   >
     <div
       v-if="!isCustomLayout"
-      class="flex h-14 w-full items-center text-center"
+      class="flex h-14 w-full items-center text-center "
     >
       <CommonLink
-        link="/"
+        link="/mobile/tickets/view/my_tickets"
         class="flex flex-1 justify-center"
         exact-active-class="text-blue"
       >
@@ -54,7 +55,7 @@ const notificationCount = computed(() => {
       </CommonLink>
       <CommonLink
         link="/account"
-        class="group flex-1"
+        class="group flex-1 pointer-events-none"
         exact-active-class="user-active"
       >
         <CommonUserAvatar

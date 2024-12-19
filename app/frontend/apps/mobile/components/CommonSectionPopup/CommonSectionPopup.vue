@@ -131,7 +131,7 @@ const getClassesByType = (type: PopupItemDescriptor['type']) => {
       <!-- empty @click is needed for https://stackoverflow.com/a/39712411 -->
       <div
         v-if="localState"
-        class="window pb-safe-4 fixed bottom-0 top-0 flex w-screen flex-col justify-end px-4 text-white ltr:left-0 rtl:right-0"
+        class="window pb-safe-4 fixed bottom-0 top-0 flex w-screen flex-col justify-end px-4 text-black ltr:left-0 rtl:right-0"
         :class="{ 'z-20': !zIndex }"
         :style="{ zIndex }"
         role="presentation"
@@ -141,9 +141,9 @@ const getClassesByType = (type: PopupItemDescriptor['type']) => {
         @keydown.esc="hidePopup()"
       >
         <div ref="wrapper" class="wrapper" role="alert" :aria-label="heading">
-          <div v-bind="$attrs" class="flex w-full flex-col rounded-xl bg-black">
-            <h1 v-if="heading" class="w-full pt-3 text-center text-lg">
-              {{ heading }}
+          <div v-bind="$attrs" class="flex w-full flex-col rounded-xl bg-white">
+            <h1 v-if="heading" class="w-full pt-3 text-center text-lg text-black">
+              {{ heading === 'Confirm dialog' ? 'Discard draft' : heading }}
             </h1>
             <slot name="header" />
             <component
@@ -151,18 +151,20 @@ const getClassesByType = (type: PopupItemDescriptor['type']) => {
               v-for="item in messages"
               :key="item.label"
               :link="item.link"
-              class="flex w-full items-center px-4"
+              class="flex w-full items-center px-4 !text-black"
               :class="[getClassesByType(item.type), item.class]"
               :variant="!item.link && item.buttonVariant"
               :transparent-background="!item.link"
               v-bind="item.attributes"
               @click="onItemClick(item)"
             >
-              {{ $t(item.label) }}
+            {{
+              $t(item.label) === 'Discard changes' ? 'Discard draft' : $t(item.label)
+            }}
             </component>
           </div>
           <CommonButton
-            class="mt-3 flex h-14 w-full items-center justify-center !bg-black"
+            class="mt-3 flex h-14 w-full items-center justify-center !bg-white !text-black"
             @click="hidePopup()"
           >
             {{ $t(cancelLabel) }}

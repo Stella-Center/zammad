@@ -185,12 +185,12 @@ const removeFile = async (file: FileUploaded) => {
 
 const uploadTitle = computed(() => {
   if (!props.context.multiple) {
-    return __('Attach file')
+    return __('+ Add attachment')
   }
   if (uploadFiles.value.length === 0) {
-    return __('Attach files')
+    return __('+ Add attachments')
   }
-  return __('Attach another file')
+  return __('+ Add attachment')
 })
 
 const reachedUploadLimit = computed(() => {
@@ -312,13 +312,13 @@ const { isOverDropZone } = useDropZone(dropZoneElement, {
         <component
           :is="fieldFileConfig?.buttonComponent"
           v-if="!reachedUploadLimit"
-          :class="classMap.button"
+          :class="[classMap.button, '!text-[#2D6AB5]']"
           type="button"
           size="medium"
           variant="secondary"
-          prefix-icon="attachment"
           :disabled="!canInteract"
           @click="canInteract && fileInput?.click()"
+          :style="{ background: 'none' }"
         >
           {{ $t(uploadTitle) }}
         </component>

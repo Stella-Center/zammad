@@ -194,7 +194,7 @@ const duration = VITE_TEST_MODE ? undefined : { enter: 300, leave: 200 }
         ></div>
         <div class="select-dialog relative m-auto">
           <div
-            class="flex min-w-[294px] max-w-[90vw] flex-col items-start rounded-xl bg-gray-400/80 backdrop-blur-[15px]"
+            class="flex min-w-[294px] max-w-[90vw] flex-col items-start rounded-xl bg-[#D9D9D9] backdrop-blur-[15px]"
           >
             <div
               ref="dialog"

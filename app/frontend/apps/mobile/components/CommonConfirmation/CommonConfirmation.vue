@@ -55,15 +55,19 @@ const heading = computed(() => {
   >
     <template #header>
       <div
-        class="flex min-h-[3.5rem] items-center justify-center border-b border-gray-300 p-3 text-center text-white"
+        class="flex min-h-[3.5rem] items-center justify-center border-b border-gray-300 p-3 text-center text-black"
       >
         {{
-          $t(
-            confirmationOptions?.text,
-            ...(confirmationOptions?.textPlaceholder || []),
-          )
+          confirmationOptions?.text ===
+          'Are you sure? You have changes that will get lost.'
+            ? 'Are you sure want to discard this draft?'
+            : $t(
+                confirmationOptions?.text,
+                ...(confirmationOptions?.textPlaceholder || []),
+              )
         }}
       </div>
     </template>
   </CommonSectionPopup>
 </template>
+

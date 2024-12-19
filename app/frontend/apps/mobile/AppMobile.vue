@@ -112,7 +112,7 @@ const transition = VITE_TEST_MODE
   </template>
   <div
     v-if="application.loaded"
-    class="h-full min-w-full bg-black font-sans text-sm text-white antialiased"
+    class="h-full min-w-full bg-[#F3F3F3] font-sans text-sm text-black antialiased"
   >
     <RouterView />
   </div>

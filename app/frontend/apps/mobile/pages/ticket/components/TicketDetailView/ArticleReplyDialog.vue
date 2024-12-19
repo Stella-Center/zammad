@@ -133,11 +133,11 @@ const close = () => {
       </CommonButton>
     </template>
     <div class="w-full p-4">
-      <div data-ticket-article-reply-form />
+      <div data-ticket-article-reply-form class="bg-white rounded-[10px] border border-[#D9D9D9] pt-[10px]" />
       <FormKit
         v-if="newTicketArticlePresent"
         variant="danger"
-        wrapper-class="mt-4 flex grow justify-center items-center"
+        wrapper-class="mt-4 flex grow justify-center items-center "
         input-class="py-2 px-4 w-full h-14 rounded-xl select-none"
         name="discardArticle"
         type="button"

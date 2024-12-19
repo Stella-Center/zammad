@@ -132,9 +132,9 @@ const advanceFocus = (event: KeyboardEvent, idx: number) => {
         <button
           v-for="(option, idx) of directionOptions"
           :key="option.value"
-          class="flex flex-1 cursor-pointer items-center justify-center rounded-md p-2"
+          class="flex flex-1 cursor-pointer items-center justify-center rounded-md p-2 border border-white text-[#2D6AB5] text-[15px]"
           :class="{
-            'bg-gray-200 font-bold': option.value === direction,
+            'bg-[#F3F3F3] text-[#2D6AB5] border border-none': option.value === direction,
           }"
           :aria-pressed="option.value === direction"
           type="button"

@@ -39,10 +39,10 @@ const scrollDown = () => {
   >
     <div
       v-if="!hidden"
-      class="pb-safe-1 fixed bottom-0 z-10 bg-gray-600/90 px-2 text-white backdrop-blur-lg transition ltr:left-0 ltr:right-0 rtl:left-0 rtl:right-0"
+      class="pb-safe-1 fixed bottom-0 z-10 bg-none px-2 text-white backdrop-blur-lg transition ltr:left-0 ltr:right-0 rtl:left-0 rtl:right-0 flex justify-center items-center w-full"
     >
-      <div class="relative flex flex-1 items-center gap-2 p-2">
-        <div class="flex-1">
+      <div class="relative flex flex-1 items-center justify-center gap-2 p-2">
+        <!-- <div class="flex-1">
           <Transition
             :duration="bannerTransitionDuration"
             enter-from-class="rtl:translate-x-20 ltr:-translate-x-20"
@@ -71,33 +71,33 @@ const scrollDown = () => {
               </span>
             </button>
           </Transition>
-        </div>
+        </div> -->
 
         <div class="flex gap-2">
           <FormKit
             v-if="canReply"
             variant="secondary"
-            input-class="flex gap-1 flex justify-center items-center font-semibold text-base px-3 py-1 !text-white formkit-variant-secondary:bg-blue rounded select-none"
+            input-class="flex gap-1 flex justify-center items-center font-semibold text-base px-[25px] py-[15px] !text-white formkit-variant-secondary:bg-[#2D6AB5] rounded-[145px] select-none"
             type="button"
             @click.prevent="emit('reply')"
           >
             <div>
-              <CommonIcon name="chat" size="small" decorative />
+              <!-- <CommonIcon name="chat" size="small" decorative /> -->
             </div>
             <span class="line-clamp-1 break-all">
-              {{ newArticlePresent ? $t('Edit reply') : $t('Add reply') }}
+              {{ newArticlePresent ? $t('Edit draft') : $t('New message') }}
             </span>
           </FormKit>
           <FormKit
             v-if="canSave"
             variant="submit"
-            input-class="font-semibold text-base px-4 py-1 !text-black formkit-variant-primary:bg-yellow rounded select-none"
+            input-class="font-semibold text-base px-[35px] py-[15px] text-white bg-blue-500 hover:bg-blue-600 rounded-full select-none"
             wrapper-class="flex justify-center items-center"
             type="button"
             form="form-ticket-edit"
             @click.prevent="emit('save')"
           >
-            {{ $t('Save') }}
+            {{ $t('Send') }}
           </FormKit>
           <button v-if="formInvalid" @click="emit('save')">
             <span

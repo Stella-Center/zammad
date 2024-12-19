@@ -38,6 +38,7 @@ const label = computed(() => {
 
 <template>
   <div
+    v-if="option.value !== 'number' && option.value !== 'state'"
     :class="{
       'pointer-events-none': option.disabled,
     }"
@@ -85,7 +86,7 @@ const label = computed(() => {
         'font-semibold !text-white': selected,
         'opacity-30': option.disabled,
       }"
-      class="grow text-white/80"
+      class="grow text-black/80"
     >
       {{ label || option.value }}
     </span>

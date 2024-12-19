@@ -96,7 +96,7 @@ const getFormSchemaGroupSection = (
         then: 'display: none;',
       },
       class: {
-        'flex flex-col h-full min-h-[calc(100vh_-_15rem)]': true,
+        'flex flex-col h-full min-h-[calc(100vh_-_15rem)] ': true,
         'items-center': itemsCenter,
       },
     },
@@ -111,7 +111,7 @@ const getFormSchemaGroupSection = (
             isLayout: true,
             element: 'h4',
             attrs: {
-              class: 'my-10 text-base text-center',
+              class: 'my-10 text-base text-center ',
             },
             children: i18n.t(sectionTitle),
           },
@@ -124,7 +124,7 @@ const getFormSchemaGroupSection = (
 
 const ticketTitleSection = getFormSchemaGroupSection(
   'ticketTitle',
-  __('Set a title for your ticket'),
+  __('Create a subject for your message'),
   [
     {
       name: 'title',
@@ -132,14 +132,14 @@ const ticketTitleSection = getFormSchemaGroupSection(
       object: EnumObjectManagerObjects.Ticket,
       screen: 'create_top',
       outerClass:
-        '$reset formkit-outer w-full grow justify-center flex items-center flex-col',
+        '$reset formkit-outer w-full grow justify-center flex items-center flex-col ',
       wrapperClass: '$reset formkit-disabled:opacity-30 flex w-full',
       labelClass: '$reset sr-only',
       blockClass: '$reset flex w-full',
       innerClass: '$reset flex justify-center items-center px-8 w-full',
       messagesClass: 'pt-2',
       inputClass:
-        '$reset formkit-input block bg-transparent grow border-b-[0.5px] border-white outline-none text-center text-xl placeholder:text-white placeholder:text-opacity-50',
+        '$reset formkit-input block bg-transparent grow border-b-[0.5px] border-white outline-none text-center text-xl placeholder:text-[#9E9E9E] placeholder:text-opacity-100 border-[#D9D9D9] border-[1px] rounded-[10px] text-[#D9D9D9] focus:text-black ',
       props: {
         placeholder: __('Title'),
         onSubmit,
@@ -155,15 +155,15 @@ const ticketArticleTypeSection = getFormSchemaGroupSection(
   [
     {
       ...ticketArticleSenderTypeField,
-      outerClass: 'w-full flex grow items-center',
-      fieldsetClass: 'grow px-4',
+      outerClass: 'w-full flex grow items-center ',
+      fieldsetClass: 'grow px-4 ',
     },
     {
       if: '$existingAdditionalCreateNotes() && $getAdditionalCreateNote($values.articleSenderType) !== undefined',
       isLayout: true,
       element: 'p',
       attrs: {
-        class: 'my-10 text-base text-center text-yellow',
+        class: 'my-10 text-base text-center',
       },
       children: '$getAdditionalCreateNote($values.articleSenderType)',
     },
@@ -278,6 +278,9 @@ const ticketArticleMessageSection = getFormSchemaGroupSection(
     {
       isLayout: true,
       component: 'FormGroup',
+      props: {
+        class: 'bg-white rounded-[10px] border border-[#D9D9D9] pt-[10px]', 
+      },
       children: [
         {
           if: '$securityIntegration === true && $values.articleSenderType === "email-out"',
@@ -286,7 +289,7 @@ const ticketArticleMessageSection = getFormSchemaGroupSection(
           type: 'security',
         },
         {
-          name: 'body',
+          name: 'body',          
           screen: 'create_top',
           object: EnumObjectManagerObjects.TicketArticle,
           props: {
@@ -348,6 +351,7 @@ const securityIntegration = computed<boolean>(
     false,
 )
 
+
 const additionalCreateNotes = computed(
   () =>
     (application.config.ui_ticket_create_notes as Record<string, string>) || {},
@@ -396,14 +400,14 @@ const setIsScrolledToBottom = () => {
     (bodyElement.value?.scrollHeight || 0)
 }
 
-watch(
-  () => activeStep.value,
-  () => {
+watch(activeStep, (step) => {
+  if (step === 'ticketMetaInformation') {
+    form.value.ticketMetaInformation = null
     nextTick(() => {
-      setIsScrolledToBottom()
+      activeStep.value = 'ticketArticleMessage'
     })
-  },
-)
+  }
+})
 
 useEventListener('scroll', setIsScrolledToBottom)
 useEventListener('resize', setIsScrolledToBottom)
@@ -484,9 +488,9 @@ export default {
     class="!h-16"
     :style="stickyStyles.header"
     back-url="/"
-    :title="__('Create Ticket')"
+    :title="__('Create Message')"
   >
-    <template #after>
+    <!-- <template #after>
       <CommonButton
         variant="submit"
         form="ticket-create"
@@ -496,7 +500,7 @@ export default {
       >
         {{ $t('Create') }}
       </CommonButton>
-    </template>
+    </template> -->
   </LayoutHeader>
   <div
     ref="bodyElement"
@@ -533,16 +537,17 @@ export default {
       type="button"
       outer-class="mt-4 mb-2"
       :disabled="lastStepName === activeStep && submitButtonDisabled"
-      wrapper-class="flex grow justify-center items-center"
-      input-class="py-2 px-4 w-full h-14 text-lg rounded-xl select-none"
+      wrapper-class="flex justify-center items-center"
+      input-class="py-2 px-4 w-1/2 h-14 text-lg rounded-xl select-none !text-white bg-[#2D6AB5] !bg-[#2D6AB5]"
       @click="moveStep()"
     >
-      {{ lastStepName === activeStep ? $t('Create ticket') : $t('Continue') }}
+      {{ lastStepName === activeStep ? $t('Send') : $t('Continue') }}
     </FormKit>
     <CommonStepper
       v-model="activeStep"
       :steps="allSteps"
       class="mb-8 mt-4 px-8"
+      style="display: none"
     />
   </footer>
 </template>

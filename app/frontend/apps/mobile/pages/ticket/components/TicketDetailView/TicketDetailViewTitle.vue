@@ -41,7 +41,7 @@ const customer = computed(() => {
 
 <template>
   <div data-test-id="ticket-title" class="relative">
-    <div class="border-b-[0.5px] border-white/10 bg-gray-600/90">
+    <div class="border-b-[0.5px] border-white/10 bg-[#DFDFDF]">
       <CommonLink
         class="flex px-4 py-5"
         data-test-id="title-content"
@@ -59,7 +59,7 @@ const customer = computed(() => {
           class="overflow-hidden ltr:mr-1 rtl:ml-1"
           :class="{ 'ltr:-ml-1 rtl:-mr-1': ticket.organization }"
         >
-          <div class="flex text-sm leading-4 text-gray-100">
+          <div class="flex text-sm leading-4 text-black-100">
             <div
               class="truncate"
               :class="{
@@ -79,7 +79,7 @@ const customer = computed(() => {
           <h1 class="line-clamp-3 break-words text-xl font-bold leading-7">
             {{ ticket.title }}
           </h1>
-          <div class="mt-2 flex flex-wrap gap-2">
+          <!-- <div class="mt-2 flex flex-wrap gap-2">
             <CommonTicketEscalationIndicator
               v-if="isTicketAgent && ticket.escalationAt"
               :escalation-at="ticket.escalationAt"
@@ -93,14 +93,14 @@ const customer = computed(() => {
               v-if="isTicketAgent"
               :priority="ticket.priority"
             />
-          </div>
+          </div> -->
         </div>
-        <CommonIcon
+        <!-- <CommonIcon
           :name="`chevron-${locale.localeData?.dir === 'rtl' ? 'left' : 'right'}`"
           size="base"
           class="shrink-0 self-center ltr:-mr-2 ltr:ml-auto rtl:-ml-2 rtl:mr-auto"
           decorative
-        />
+        /> -->
       </CommonLink>
     </div>
     <CommonAlert

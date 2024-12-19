@@ -61,7 +61,7 @@ const iconProps = computed<IconProps | null>(() => {
             />
           </slot>
         </div>
-        <slot>{{ i18n.t(label, ...(labelPlaceholder || [])) }}</slot>
+        <slot>My Message</slot>
       </div>
 
       <div

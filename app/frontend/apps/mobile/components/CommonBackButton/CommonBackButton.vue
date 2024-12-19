@@ -23,15 +23,16 @@ const props = defineProps<Props>()
 const walker = useWalker()
 
 const isHomeButton = computed(() => {
-  return !(props.avoidHomeButton || walker.getBackUrl(props.fallback) !== '/')
+  return !(props.avoidHomeButton || walker.getBackUrl(props.fallback) !== '/ticket/view/my_tickets')
 })
 
 const locale = useLocaleStore()
 
 const icon = computed(() => {
-  if (isHomeButton.value) return 'home'
-  if (locale.localeData?.dir === 'rtl') return 'chevron-right'
-  return 'chevron-left'
+  return 'home'
+  // if (isHomeButton.value) return 'home'
+  // if (locale.localeData?.dir === 'rtl') return 'chevron-right'
+  // return 'chevron-left'
 })
 </script>
 

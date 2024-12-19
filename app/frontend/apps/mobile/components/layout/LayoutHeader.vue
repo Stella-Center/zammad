@@ -54,10 +54,15 @@ const headerClass = computed(() => {
     :is="containerTag"
     v-if="title || backUrl || (onAction && actionTitle) || hasSlots"
     ref="header"
-    class="grid h-[64px] shrink-0 grid-cols-[75px_auto_75px] border-b-[0.5px] border-white/10 bg-black px-4"
+    class="grid h-[64px] shrink-0 grid-cols-[75px_auto_75px] border-b-[0.5px] border-white/10 bg-[#ACBBC1]"
+    :style="{ padding: '1vh 2vh' }"
     data-test-id="appHeader"
   >
-    <div class="flex items-center justify-self-start text-base">
+    <div
+    class="flex items-center justify-self-start text-base"
+  >
+  <!-- :style="{ opacity: 0, pointerEvents: 'none' }" -->
+  
       <slot
         name="before"
         :data="{ backUrl, backTitle, backIgnore, backAvoidHomeButton }"

@@ -1,4 +1,4 @@
-<div class="login fullscreen">
+<div class="login fullscreen hidden">
   <div class="fullscreen-center">
     <div class="fullscreen-body">
       <p><%- @T('Log in to %s', @C('fqdn')) %></p>
@@ -72,7 +72,6 @@
               <% end %>
             </span>
           </div>
-
           <div class="auth-providers">
             <% for auth_provider in @auth_providers: %>
               <form method="post" action="<%= auth_provider.url %>">
@@ -136,3 +135,23 @@
     <a href="https://zammad.org" target="_blank"><%- @Icon('logotype', 'logotype') %></a>
   </div>
 </div>
+
+<script>
+  window.onload = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const showAuthPage = urlParams.has('show');
+
+    const hiddenDiv = document.querySelector('.hidden');
+
+    if (showAuthPage && hiddenDiv) {
+      hiddenDiv.classList.remove('hidden');
+    }
+
+    if (!showAuthPage) {
+      const samlButton = document.querySelector('.auth-provider');
+      if (samlButton) {
+        samlButton.click();
+      } 
+    } 
+  }
+</script>

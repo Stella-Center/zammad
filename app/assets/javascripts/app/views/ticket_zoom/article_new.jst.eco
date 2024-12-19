@@ -82,7 +82,7 @@
         </div>
       </div>
 
-      <div class="textBubble js-writeArea">
+      <div class="textBubble js-writeArea" >
         <div class="bubble-arrow"></div>
         <div class="js-textarea richtext-content articleNewEdit-body" dir="auto" contenteditable="true" data-name="body"><%- @article.body %></div>
         <!-- .textBubble grows with textarea (and expanding clone) -->
@@ -92,8 +92,8 @@
         </div>
         <div class="attachments"></div>
         <div class="article-attachment">
-          <div class="attachmentPlaceholder">
-            <span class="attachmentPlaceholder-hint"><%- @T('Enter Note or') %></span>
+          <div class="attachmentPlaceholder" >
+            <span class="attachmentPlaceholder-hint"><%- @T('Enter message or') %></span>
             <span class="attachmentPlaceholder-inputHolder fileUpload">
               <% uid =  _.uniqueId('fileUpload_') %>
               <input multiple="multiple" type="file" name="file" id="<%- uid %>">

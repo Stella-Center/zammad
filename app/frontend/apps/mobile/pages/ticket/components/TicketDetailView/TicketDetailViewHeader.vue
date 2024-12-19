@@ -53,7 +53,7 @@ const showActions = () => {
 
 <template>
   <LayoutHeader
-    class="bg-gray-600/90"
+    class="bg-white-600/90"
     :refetch="refetchingTicket || loadingTicket"
     :back-ignore="[`/tickets/${ticket?.internalId}/information`]"
     back-url="/"
@@ -62,14 +62,15 @@ const showActions = () => {
       class="flex flex-1 flex-col items-center justify-center text-center text-sm leading-4"
       data-test-id="header-content"
     >
-      <div class="font-bold">
-        {{ ticket && `#${ticket.number}` }}
+      <div class="font-bold text-lg">
+        <!-- {{ ticket && `#${ticket.number}` }} -->
+        New Message
       </div>
-      <div class="text-gray">
+      <!-- <div class="text-gray">
         {{
           ticket && $t('created %s', i18n.relativeDateTime(ticket.createdAt))
         }}
-      </div>
+      </div> -->
     </div>
 
     <template #after>

@@ -1,12 +1,12 @@
 <div class="tabsSidebar-holder flex">
-  <div class="main no-padding flex tabsSidebar-sidebarSpacer tabsSidebar-tabsSpacer">
+  <div class="main no-padding flex ">
     <div class="newTicket">
-      <div class="box box--newTicket">
-        <div class="page-header">
-          <h1><%- @T('New Ticket') %></h1>
+      <div class="box box--newTicket" style="border-radius: 10px; padding: 46px">
+        <div class="page-header-2" style="text-align: center;">
+          <h1><%- @T('New Message') %></h1>
         </div>
 
-        <div class="page-content">
+        <div class="page-content" style="padding: 46px">
           <form role="form" class="ticket-create" autocomplete="off">
             <input type="hidden" name="form_id" value="<%= @form_id %>"/>
 
@@ -18,14 +18,13 @@
               <div class="ticket-form-bottom"></div>
             </div>
 
-            <div class="form-controls">
-              <a class="btn btn--text btn--subtle js-cancel" href="#/"><%- @T('Cancel & Go Back') %></a>
-              <button type="submit" class="btn btn--success js-submit align-right"><%- @T('Create') %></button>
+            <div class="form-controls" style="margin: 70px 0 0 0">
+              <a class="btn btn--text btn--subtle js-cancel" href="#/"><%- @T('CANCEL & GO BACK') %></a>
+              <button type="submit" class="btn btn--success js-submit align-right" style="background-color: #2D6AB5; border-radius: 64px;"><%- @T('Send') %></button>
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-  <div class="tabsSidebar vertical"></div>
 </div>

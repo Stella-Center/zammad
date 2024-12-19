@@ -16,14 +16,14 @@ export const addButtonVariants = (classes: Classes = {}): Classes => {
   return extendClasses(classes, {
     wrapper: 'relative',
     input:
-      'formkit-variant-primary:bg-blue formkit-variant-submit:text-black formkit-variant-submit:bg-yellow formkit-variant-submit:font-semibold formkit-variant-danger:bg-red-dark formkit-variant-danger:text-red-bright bg-transparent text-white',
+      'formkit-variant-primary:bg-blue formkit-variant-submit:text-white formkit-variant-submit:bg-[#2D6AB5] formkit-variant-submit:font-semibold formkit-variant-danger:bg-white formkit-variant-danger:text-red-bright bg-transparent text-white',
   })
 }
 
 const getCoreClasses: FormThemeExtension = (classes: FormThemeClasses) => {
   return {
     global: extendClasses(classes.global, {
-      outer: 'formkit-invalid:bg-red-dark formkit-errors:bg-red-dark',
+      outer: 'formkit-invalid:bg-white formkit-errors:bg-white',
       label: 'formkit-required:required formkit-invalid:text-red-bright',
       messages: 'px-2',
       message: 'text-red-bright pb-1',

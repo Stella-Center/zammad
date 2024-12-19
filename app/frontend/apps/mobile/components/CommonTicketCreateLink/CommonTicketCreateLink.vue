@@ -10,6 +10,7 @@ const { ticketCreateEnabled } = useTicketCreateView()
   <div
     v-if="ticketCreateEnabled"
     class="flex cursor-pointer items-center justify-end"
+    :style="{ padding: '10px', backgroundColor: '#2D6AB5', borderRadius: '145px', color: 'white' }"
   >
     <CommonLink link="/tickets/create" :aria-label="$t('Create new ticket')">
       <CommonIcon name="add" size="small" decorative />
