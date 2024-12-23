@@ -140,7 +140,6 @@
   window.onload = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const showAuthPage = urlParams.has('saml');
-
     const hiddenDiv = document.querySelector('.hidden');
 
     if (showAuthPage && hiddenDiv) {
@@ -148,10 +147,15 @@
     }
 
     if (showAuthPage) {
-      const samlButton = document.querySelector('.auth-provider');
-      if (samlButton) {
-        samlButton.click();
-      } 
-    } 
-  }
+      const clickAuthButton = () => {
+        const samlButton = document.querySelector('.auth-provider');
+        if (samlButton) {
+          samlButton.click();
+        } else {
+          setTimeout(clickAuthButton, 100);
+        }
+      };
+      clickAuthButton();
+    }
+  };
 </script>
