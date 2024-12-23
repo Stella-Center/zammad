@@ -6283,6 +6283,10 @@ a.list-group-item.active>.badge,
     display: none;
   }
 
+  &.is-empty .arrow {
+    display: none; 
+  }
+
   .arrow {
     top: 23px !important;
     left: -11px;

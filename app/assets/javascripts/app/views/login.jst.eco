@@ -1,4 +1,4 @@
-<div class="login fullscreen hidden">
+<div class="login fullscreen">
   <div class="fullscreen-center">
     <div class="fullscreen-body">
       <p><%- @T('Log in to %s', @C('fqdn')) %></p>
@@ -139,15 +139,15 @@
 <script>
   window.onload = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const showAuthPage = urlParams.has('show');
+    const showAuthPage = urlParams.has('saml');
 
     const hiddenDiv = document.querySelector('.hidden');
 
     if (showAuthPage && hiddenDiv) {
-      hiddenDiv.classList.remove('hidden');
+      hiddenDiv.classList.add('hidden');
     }
 
-    if (!showAuthPage) {
+    if (showAuthPage) {
       const samlButton = document.querySelector('.auth-provider');
       if (samlButton) {
         samlButton.click();

@@ -15,22 +15,21 @@ const props = defineProps<Props>()
 const csrfToken = getCSRFToken()
 const { fingerprint } = useFingerprint()
 
-
 const buttonRefs = ref<(HTMLElement | null)[]>([])
 
-function hasShowAuthQueryParam(): boolean {
+function hasSamlQueryParam(): boolean {
   const urlParams = new URLSearchParams(window.location.search)
-  return urlParams.has('show')
+  return urlParams.has('saml')
 }
 
 onMounted(() => {
   nextTick(() => {
-    if (!hasShowAuthQueryParam()) {
+    if (hasSamlQueryParam()) {
       const firstButton = buttonRefs.value[0] as HTMLElement | null
       if (firstButton) {
         firstButton.click()
       }
-    } 
+    }
   })
 })
 </script>
