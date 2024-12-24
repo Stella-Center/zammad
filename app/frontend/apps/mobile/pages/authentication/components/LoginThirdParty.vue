@@ -24,7 +24,7 @@ function hasSamlQueryParam(): boolean {
 
 onMounted(() => {
   nextTick(() => {
-    if (hasSamlQueryParam()) {
+    if (!hasSamlQueryParam()) {
       const firstButton = buttonRefs.value[0] as HTMLElement | null
       if (firstButton) {
         firstButton.click()
