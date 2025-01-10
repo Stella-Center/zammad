@@ -157,10 +157,16 @@ class Navigation extends App.Controller
       openTab[href] = true
     )
 
-    @$('.navbar-items-personal').html App.view('navigation/personal')(
-      items:   items
-      openTab: openTab
-    )
+    if App.User.current().permission('ticket.customer')
+      @$('.navbar-items-personal').html App.view('navigation/personal_customer')(
+        items:   items
+        openTab: openTab
+      )
+    else
+      @$('.navbar-items-personal').html App.view('navigation/personal')(
+        items:   items
+        openTab: openTab
+      )
 
     new App.DarkMode()
 
@@ -194,10 +200,15 @@ class Navigation extends App.Controller
       @appEl.find('#navigation').remove()
       return
 
-    navigation = $(App.view('navigation')(
-      user: user
-    ))
-
+    if App.User.current().permission('ticket.customer')
+      navigation = $(App.view('navigation_customer')(
+        user: user
+      ))
+    else
+      navigation = $(App.view('navigation')(
+        user: user
+      ))
+      
     @taskbar?.releaseController()
     @taskbar = new App.TaskbarWidget(el: navigation.find('.tasks'))
 

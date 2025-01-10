@@ -7,7 +7,7 @@ const route: RouteRecordRaw[] = [
     path: '/',
     name: 'Home',
     props: true,
-    component: () => import('./views/Home.vue'),
+    component: () => import('../ticket/views/TicketOverviewCustomer.vue'),
     beforeEnter(to) {
       const location = to.hash && to.hash.slice(1)
 
@@ -22,7 +22,7 @@ const route: RouteRecordRaw[] = [
       title: __('Home'),
       requiresAuth: true,
       requiredPermission: ['*'],
-      hasBottomNavigation: true,
+      hasBottomNavigation: false,
       level: 1,
     },
   },

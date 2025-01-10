@@ -85,16 +85,28 @@ class App.TicketZoomAttributeBar extends App.Controller
 
         @possibleMacros.push macro
 
-    localeEl = $(App.view('ticket_zoom/attribute_bar')(
-      ticket:                 @ticket
-      macros:                 @possibleMacros
-      macroDisabled:          macroDisabled
-      sharedButtonVisible:    sharedButtonVisible
-      sharedDraftsDisabled:   !sharedDraftsEnabled
-      overview_id:            @overview_id
-      resetButtonShown:       resetButtonShown
-      sharedDraftButtonShown: sharedDraftButtonShown
-    ))
+    if @ticket.currentView() is 'customer'
+      localeEl = $(App.view('ticket_zoom/attribute_bar_customer')(
+        ticket:                 @ticket
+        macros:                 @possibleMacros
+        macroDisabled:          macroDisabled
+        sharedButtonVisible:    sharedButtonVisible
+        sharedDraftsDisabled:   !sharedDraftsEnabled
+        overview_id:            @overview_id
+        resetButtonShown:       resetButtonShown
+        sharedDraftButtonShown: sharedDraftButtonShown
+      ))
+    else
+      localeEl = $(App.view('ticket_zoom/attribute_bar')(
+        ticket:                 @ticket
+        macros:                 @possibleMacros
+        macroDisabled:          macroDisabled
+        sharedButtonVisible:    sharedButtonVisible
+        sharedDraftsDisabled:   !sharedDraftsEnabled
+        overview_id:            @overview_id
+        resetButtonShown:       resetButtonShown
+        sharedDraftButtonShown: sharedDraftButtonShown
+      ))
 
     @setSecondaryAction(@getAction(), localeEl)
 

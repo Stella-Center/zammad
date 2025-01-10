@@ -15160,3 +15160,26 @@ div.accounted-time-value {
     }
   }
 }
+
+
+.navigation-customer {
+  background: #ACBBC1;
+  @import 'navigation_customer';
+}
+
+.attributeBar-customer {
+  @import 'attributebar_customer';
+}
+
+.ticketZoom {
+  background-color: #F3F3F3;
+  @import 'ticketzoom_customer';
+}
+
+.splash{
+  background-color: #fff;
+}
+
+.splash-title{
+  color: #000;
+}

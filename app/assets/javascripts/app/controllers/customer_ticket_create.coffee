@@ -52,7 +52,7 @@ class CustomerTicketCreate extends App.ControllerAppContent
     defaults = template['options'] || {}
     handlers = @Config.get('TicketCreateFormHandler')
 
-    @html App.view('customer_ticket_create')(
+    @html App.view('customer_ticket_create_customer')(
       head: __('New Ticket')
       form_id: @form_id
     )

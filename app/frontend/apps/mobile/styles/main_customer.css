@@ -1,0 +1,103 @@
+.h-full{
+  background-color: rgb(243,243,243);
+}
+
+.bg-black{
+  background-color: #ACBBC1;
+  color: #000;
+}
+
+.bg-gray-500{
+  background-color: #fff;
+}
+
+.bg-gray-600{
+  background-color: #fff;
+}
+
+.bg-gray-600 span{
+  color: #000;
+}
+
+.text-yellow{
+  color: #2D6AB5;
+}
+
+.text-gray-100{
+  color: black;
+}
+
+.add-btn{
+  background-color: #2D6AB5;
+  padding: 10px;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.form-group{
+  border: 2px solid #D9D9D9;
+}
+
+.form-group button{
+  color: #2D6AB5;
+}
+
+.wrapper .bg-black{
+  background-color: #fff;
+}
+
+.text-white{
+  color: #000;
+}
+
+.text-gray{
+  color: #000;
+}
+
+.wrapper button.text-white{
+  color: #fff;
+}
+
+.pb-safe-1{
+  background-color: rgb(243,243,243);
+}
+
+.pb-safe-1 button{
+  background-color: rgb(45 106 181) !important;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.Article .bg-blue{
+  background-color: #fff;
+}
+
+#dialog-ticket-article-reply .text-white{
+  color: #fff !important;
+}
+
+#dialog-ticket-article-reply .bg-black {
+  background-color: rgb(243,243,243);
+}
+
+#dialog-ticket-article-reply label{
+  color: #000;
+}
+
+#dialog-ticket-article-reply form button span{
+  color: #2D6AB5;
+}
+
+#dialog-ticket-article-reply form button svg{
+  color: #2D6AB5;
+}
+
+.backdrop-blur-lg .relative{
+  background-color: rgb(243,243,243);
+}
+
+.backdrop-blur-lg .relative button{
+  background-color: #2D6AB5 !important;
+  align-self: center !important;
+  color: #fff !important;
+}

@@ -18,7 +18,10 @@ class App.TicketOverview extends App.Controller
     @bindId = App.TicketOverviewCollection.bind(load)
 
   render: ->
-    elLocal = $(App.view('ticket_overview/index')())
+    if App.User.current().permission('ticket.customer')
+      elLocal = $(App.view('ticket_overview/index_customer')())
+    else
+      elLocal = $(App.view('ticket_overview/index')())
 
     @navBarControllerVertical.releaseController() if @navBarControllerVertical
     @navBarControllerVertical = new App.TicketOverviewNavbar(

@@ -1,0 +1,122 @@
+.user-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    flex-shrink: 0;
+    display: block;
+  
+    @include phone {
+      flex-direction: column;
+    }
+}
+
+.navbar-items-personal {
+    // display: block;
+}
+
+.user-menu li{
+    background-color: #ACBBC1;
+}
+.user-menu li.add-customer .list-button{
+    margin: 20px;
+    height: 40px;
+    background-color: #2D6AB5;
+    border-radius: 64.14px;
+}
+.user-menu li.add-customer:hover .list-button::before,
+.user-menu li.add-customer.is-active .list-button::before,
+.user-menu li.add-customer.is-hovered .list-button::before {
+    background-color: #2D6AB5;
+    border-radius: 64.14px;
+
+}
+.user-menu li.add-customer span{
+    color: #fff;
+}
+
+.user-menu-icon-customer{
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.back-to-portal{
+    text-align: center;
+    color: #000;
+}
+
+
+
+
+
+.icon-task-state.open {
+    fill: #2D6AB5;
+}
+
+
+
+
+.nav-tab-name {
+    text-align: start;
+    color: black;
+
+    &.is-inactive {
+        text-decoration: line-through;
+        opacity: 0.73;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.tasks {
+    background: linear-gradient(to bottom, #F8F9FA, #ACBBC1);
+    padding-top: 20px;
+    // padding-right: 20px;
+    // padding-left: 20px;
+}
+
+.task{
+    border-bottom-color: #D9D9D9;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.task:hover{
+    background-color: #fff !important;
+}
+  
+.nav-tab.task-state-open.is-active {
+    background-color: transparent;
+    color: #2D6AB5;
+}
+
+
+.menu-item {
+    color: black;
+}
+
+
+
+
+.search {
+    background-color: #fff;
+}
+
+
+.search input[type='search'] {
+    color: black;
+    background: #D9D9D9;
+  }
+
+
+
+

@@ -279,7 +279,7 @@ const onContextClick = () => {
           >
             {{ shownMore ? $t('See less') : $t('See more') }}
           </button>
-          <button
+          <!-- <button
             :class="[
               colorClasses,
               'flex h-7 w-7 items-center justify-center rounded-md',
@@ -296,7 +296,7 @@ const onContextClick = () => {
               decorative
               data-ignore-click
             />
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
