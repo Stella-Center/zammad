@@ -1,0 +1,81 @@
+<style>
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #656567;
+}
+body,
+html,
+#loading-app,
+#app[data-loaded="true"] {
+  height: 100%;
+}
+html {
+  background-color: white;
+}
+body,
+html {
+  margin: 0;
+}
+#loading-app {
+  display: flex;
+}
+.loading-animation {
+  margin: 0 auto;
+  display: block;
+  vertical-align: middle;
+  animation: spin 1s linear infinite;
+}
+.loading-animation.error {
+  filter: blur(1px);
+}
+.loading-animation.error * {
+  animation: none !important;
+}
+.loading-main {
+  margin: auto;
+}
+.loading-sr-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.loading-failed {
+  position: relative;
+  opacity: 0;
+  color: #fff;
+  font-weight: 600;
+  width: 175px;
+  text-align: center;
+  margin-top: -52px;
+  transition: opacity 0.5s;
+  font-size: 16px;
+  line-height: 21px;
+}
+.loading-failed.active {
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
+<div id="loading-app">
+  <div class="loading-main">
+    <svg class="loading-animation" width="80px" height="80px" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 7.29481C16 3.27256 12.4117 0 8.00081 0C3.58989 0 0 3.27256 0 7.29481C0.00228982 8.61169 0.388609 9.89932 1.11164 11C0.388609 12.1007 0.00228982 13.3883 0 14.7052C0 18.7274 3.58826 22 7.99919 22C12.4101 22 16 18.7274 16 14.7052C15.9977 13.3883 15.6114 12.1007 14.8884 11C15.6114 9.89932 15.9977 8.61169 16 7.29481ZM1.24236 7.29481C1.24236 3.95743 4.2748 1.24227 8.00081 1.24227C11.7268 1.24227 14.7576 3.95743 14.7576 7.29481C14.7564 8.22607 14.5191 9.14182 14.0679 9.9565C12.5997 8.39934 10.4245 7.41093 8.00081 7.41093C5.57712 7.41093 3.40299 8.39934 1.93376 9.9565C1.48199 9.14197 1.24411 8.22621 1.24236 7.29481ZM13.3419 11C12.1022 12.427 10.169 13.3495 8.00081 13.3495C5.83262 13.3495 3.8994 12.4313 2.6619 11.0027C3.8994 9.57572 5.83208 8.6559 8.00081 8.6559C10.1695 8.6559 12.1022 9.57301 13.3419 11ZM14.7603 14.7052C14.7603 18.0426 11.729 20.7577 8.00351 20.7577C4.27805 20.7577 1.24236 18.0426 1.24236 14.7052C1.24411 13.7738 1.48199 12.858 1.93376 12.0435C3.40299 13.6007 5.57712 14.5918 8.00081 14.5918C10.4245 14.5918 12.5997 13.6034 14.0679 12.0462C14.5186 12.8601 14.7559 13.7748 14.7576 14.7052H14.7603Z" fill="#080808"/>
+    </svg>
+  </div>
+</div>
