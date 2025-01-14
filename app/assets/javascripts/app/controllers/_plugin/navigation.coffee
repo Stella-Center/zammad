@@ -200,12 +200,16 @@ class Navigation extends App.Controller
       @appEl.find('#navigation').remove()
       return
 
-    if App.User.current().permission('ticket.customer')
-      navigation = $(App.view('navigation_customer')(
+    if App.User.current().permission('ticket.agent')
+      navigation = $(App.view('navigation')(
         user: user
       ))
-    else
+    else if App.User.current().permission('ticket.admin')
       navigation = $(App.view('navigation')(
+        user: user
+      ))
+    else if App.User.current().permission('ticket.customer')
+      navigation = $(App.view('navigation_customer')(
         user: user
       ))
       
