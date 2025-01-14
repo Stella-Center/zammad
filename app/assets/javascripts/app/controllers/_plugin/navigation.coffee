@@ -208,7 +208,7 @@ class Navigation extends App.Controller
       navigation = $(App.view('navigation')(
         user: user
       ))
-    else if App.User.current().permission('ticket.customer')
+    else
       navigation = $(App.view('navigation_customer')(
         user: user
       ))
