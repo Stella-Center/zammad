@@ -161,12 +161,27 @@ class App.ArticleViewItem extends App.ControllerObserver
       article['delivery_status_icon']    = icon
       article['delivery_status_message'] = msg
 
-    @html App.view('ticket_zoom/article_view')(
-      ticket:      @ticket
-      article:     article
-      attachments: App.view('generic/attachments')(attachments: attachments, has_body: !!article.html)
-      links:       links
-    )
+    if App.User.current().permission('ticket.agent')
+      @html App.view('ticket_zoom/article_view')(
+        ticket:      @ticket
+        article:     article
+        attachments: App.view('generic/attachments')(attachments: attachments, has_body: !!article.html)
+        links:       links
+      )
+    else if App.User.current().permission('ticket.admin')
+      @html App.view('ticket_zoom/article_view')(
+        ticket:      @ticket
+        article:     article
+        attachments: App.view('generic/attachments')(attachments: attachments, has_body: !!article.html)
+        links:       links
+      )
+    else if App.User.current().permission('ticket.customer')
+      @html App.view('ticket_zoom/article_view_customer')(
+        ticket:      @ticket
+        article:     article
+        attachments: App.view('generic/attachments')(attachments: attachments, has_body: !!article.html)
+        links:       links
+      )
 
     new App.WidgetAvatar(
       el:        @$('.js-avatar')
