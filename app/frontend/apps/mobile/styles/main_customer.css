@@ -101,3 +101,7 @@
   align-self: center !important;
   color: #fff !important;
 }
+
+.formkit-input[role="textbox"]{
+  color: #000;
+}

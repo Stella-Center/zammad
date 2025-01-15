@@ -70,7 +70,7 @@ RSpec.describe 'Desktop > Ticket > Edit', app: :desktop_view, authenticated_as: 
 
       wait_for_gql('shared/entities/ticket/graphql/mutations/update.graphql', number: 1)
 
-      expect(page).to have_text('Ticket updated successfully')
+      expect(page).to have_text('Message sent')
       expect(ticket.reload).to have_attributes(select_field: '2', text_field: 'text content')
 
       #
@@ -88,7 +88,7 @@ RSpec.describe 'Desktop > Ticket > Edit', app: :desktop_view, authenticated_as: 
       find('[aria-label="Edit ticket title"]').click
       send_keys ' changed', :enter
       wait_for_gql('shared/entities/ticket/graphql/mutations/update.graphql', number: 2)
-      expect(page).to have_text('Ticket updated successfully')
+      expect(page).to have_text('Message sent')
 
       within 'main' do
         expect(page).to have_text('Test initial changed')
@@ -107,7 +107,7 @@ RSpec.describe 'Desktop > Ticket > Edit', app: :desktop_view, authenticated_as: 
 
       wait_for_gql('shared/entities/ticket/graphql/mutations/update.graphql', number: 3)
 
-      expect(page).to have_text('Ticket updated successfully')
+      expect(page).to have_text('Message sent')
       expect(ticket.reload.state.name).to eq('closed')
 
       within '#user-taskbar-tabs' do

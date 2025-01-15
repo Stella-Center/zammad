@@ -64,7 +64,7 @@ RSpec.describe 'Mobile > Ticket > Email reply with security options', app: :mobi
       prepare_email_reply with_body: true
       save_ticket
 
-      find('[role=alert]', text: 'Ticket updated successfully.')
+      find('[role=alert]', text: 'Message sent')
 
       expect(Ticket.last.articles.last.preferences['security']['encryption']['success']).to be(encrypt)
       expect(Ticket.last.articles.last.preferences['security']['sign']['success']).to be(sign)
