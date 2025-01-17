@@ -98,19 +98,34 @@ class Login extends App.ControllerFullPage
       sortBy: 'prio'
     )
 
+    urlParams = new URLSearchParams(window.location.search)
+
+    hide_login_form = urlParams.has('autoLogin')
+
     @replaceWith App.view('login')(
       item:             data
       logoUrl:          @logoUrl()
       auth_providers:   auth_providers
       public_links:     public_links
       show_mobile_link: App.MobileDetection.isMobile() or App.MobileDetection.isForcingDesktopView()
+      hide_login_form:  hide_login_form
     )
 
-    # set focus to username or password
-    if !@$('[name="username"]').val()
-      @$('[name="username"]').trigger('focus')
-    else
-      @$('[name="password"]').trigger('focus')
+    # Check for URL parameter and redirect if found
+    if urlParams.has('autoLogin') and urlParams.get('autoLogin') is 'saml'
+      setTimeout(() ->
+        form = document.querySelector('form[action="/auth/saml"]')
+        if form?
+          console.log("Submitting SAML login form")
+          form.submit()
+      , 0)
+
+      # set focus to username or password
+      if !@$('[name="username"]').val()
+        @$('[name="username"]').trigger('focus')
+      else
+        @$('[name="password"]').trigger('focus')
+      return
 
     # scroll to top
     @scrollTo()

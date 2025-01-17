@@ -178,6 +178,29 @@ const showRefetch = ref(false)
         </template>
       </LayoutHeader>
     </header>
-
+    <div :style="stickyStyles.body">
+      <CommonLoader
+        v-if="loadingOverviews || overviews.length"
+        :loading="loadingOverviews"
+      >
+        <TicketList
+          v-if="selectedOverview && orderBy && orderDirection"
+          :overview-id="selectedOverview.id"
+          :overview-ticket-count="selectedOverview.ticketCount"
+          :order-by="orderBy"
+          :order-direction="orderDirection"
+          :max-count="application.config.ui_ticket_overview_ticket_limit"
+          :hidden-columns="hiddenColumns"
+          @refetch="showRefetch = $event"
+        />
+      </CommonLoader>
+      <div
+        v-else
+        class="flex items-center justify-center gap-2 p-4 text-center"
+      >
+        <CommonIcon class="text-red" name="close-small" />
+        {{ $t('Currently no overview is assigned to your roles.') }}
+      </div>
+    </div>
   </div>
 </template>

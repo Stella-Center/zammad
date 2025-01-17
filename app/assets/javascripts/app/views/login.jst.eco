@@ -2,6 +2,12 @@
   <div class="fullscreen-center">
     <div class="fullscreen-body">
       <p><%- @T('Log in to %s', @C('fqdn')) %></p>
+            <% if @hide_login_form: %>
+        <p>
+          dsadsad
+        </p>
+      <% end %>
+
 
       <% if @C('maintenance_mode'): %>
         <div class="hero-unit alert alert--danger js-maintenanceMode"><%- @T('Zammad is currently in maintenance mode. Only administrators can log in. Please wait until the maintenance window is over.') %></div>
