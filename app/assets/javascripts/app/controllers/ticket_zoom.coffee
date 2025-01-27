@@ -474,20 +474,12 @@ class App.TicketZoom extends App.Controller
       @autosaveLast    = {}
       @scrollHeaderPos = undefined
 
-      if App.User.current().permission('ticket.customer')
-        elLocal = $(App.view('ticket_zoom_customer')
-          ticket:         @ticket
-          nav:            @nav
-          scrollbarWidth: App.Utils.getScrollBarWidth()
-          dir:            App.i18n.dir()
-        )
-      else
-        elLocal = $(App.view('ticket_zoom')
-          ticket:         @ticket
-          nav:            @nav
-          scrollbarWidth: App.Utils.getScrollBarWidth()
-          dir:            App.i18n.dir()
-        )
+      elLocal = $(App.view('ticket_zoom')
+        ticket:         @ticket
+        nav:            @nav
+        scrollbarWidth: App.Utils.getScrollBarWidth()
+        dir:            App.i18n.dir()
+      )
 
       @renderOverviewNavigator(elLocal)
 
